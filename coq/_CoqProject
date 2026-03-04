@@ -1,0 +1,15 @@
+-R . VE
+
+cnf/Literal.v
+cnf/Assignment.v
+cnf/Clause.v
+cnf/Cnf.v
+cnf/Gensym.v
+cnf/Encoding.v
+cardinality/Distinct.v
+cardinality/Amk.v
+cardinality/Alk.v
+cardinality/DirectAmo.v
+parity/Parity.v
+parity/Explode.v
+parity/DirectParity.v
