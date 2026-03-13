@@ -32,7 +32,9 @@ Definition eval_clause (τ : assignment) (c : clause V) : bool :=
   existsb (eval_literal τ) c.
 
 
-// starting from protected def from line 68
+(*starting from protected def from line 68
+Evaluate a CNF formula under a given assignment.
+c1 AND c2 AND c3 if any clause is false, then the whole is false.*)
 Definition eval_cnf (τ : assignment) (f : cnf) : bool :=
   fold_right (fun c b => b && (eval_clause τ c)) true f.
 
@@ -48,7 +50,8 @@ Theorem eval_cons : forall τ c f, eval_cnf τ (c :: f) = eval_clause τ c && ev
 Proof. intros. simpl. rewrite andb_comm. reflexivity. Qed.
 
 
-// from line 79 
+(*from line 79 
+cnf is true iff all clauses are true.*)
 Theorem eval_tt_iff_forall_clause_eval_tt : 
   forall τ f, eval_cnf τ f = true <-> (forall c, In c f -> eval_clause τ c = true).
 Proof.
@@ -65,7 +68,7 @@ Proof.
       * intros c0 Hc0. apply H. right. assumption.
 Qed.
 
-
+(*cnf is false iff there exists a clause that is false.*)
 Theorem eval_ff_iff_exists_clause_eval_ff :
   forall τ f, eval_cnf τ f = false <-> (exists c, In c f /\ eval_clause τ c = false).
 Proof.
@@ -85,8 +88,8 @@ Proof.
 Qed.
 
 
-// from line 165
-
+(*from line 165
+if there exists an assignment that makes the CNF true, then it is satisfiable.*)
 Definition satisfiable (f : cnf) := exists τ, eval_cnf τ f = true.
 
 Theorem satisfiable_of_eval_tt : forall f τ, eval_cnf τ f = true -> satisfiable f.
@@ -100,8 +103,8 @@ Definition clause_vars (c : clause V) : list V :=
   map lit_var c.
 
 
-// from line 126 in lean
-
+(*from line 126 in lean
+ Collect all variables that appear in a CNF formula.*) 
 Fixpoint vars (f : cnf) : list V :=
   match f with
   | [] => []
@@ -127,7 +130,8 @@ Proof.
 Qed.
 
 
-// Frome line 253 in lean
+(*Frome line 253 in lean
+2 cnf are equivalent iff they have the same satisfiability.*)
 Definition eqsat (f1 f2 : cnf) := satisfiable f1 <-> satisfiable f2.
 
 
@@ -135,7 +139,9 @@ Definition agree_on (τ1 τ2 : assignment) (s : list V) :=
   forall v, In v s -> τ1 v = τ2 v.
 
 
-// from line 268 in lean
+(*from line 268 in lean
+2 cnf are equivalent on a set of variables iff for any assignment, 
+there exists an assignment that agrees on the set of variables and makes the cnf true.*)
 Definition sequiv (f1 f2 : cnf) (s : list V) :=
   forall τ, 
     (exists σ1, eval_cnf σ1 f1 = true /\ agree_on τ σ1 s) <->
