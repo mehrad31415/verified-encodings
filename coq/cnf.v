@@ -88,6 +88,7 @@ Proof.
 Qed.
 
 
+
 (*from line 165
 if there exists an assignment that makes the CNF true, then it is satisfiable.*)
 Definition satisfiable (f : cnf) := exists τ, eval_cnf τ f = true.
@@ -102,8 +103,46 @@ Definition lit_var (l : literal V) : V :=
 Definition clause_vars (c : clause V) : list V :=
   map lit_var c.
 
-
 (*from line 126 in lean
+count the number of clauses that are true/false*)
+Definition count_tt (τ : assignment) (f : cnf) : nat :=
+  length (filter (fun c => eval_clause τ c) f).
+Definition count_ff (τ : assignment) (f : cnf) : nat :=
+  length (filter (fun c => negb (eval_clause τ c)) f).
+
+(* # clauses that are true + # clauses that are false = #clauses*)
+Theorem count_tt_nil :
+  forall τ, count_tt τ [] = 0.
+Proof. intros; reflexivity. Qed.
+
+(*clauses that are false + clauses that are true = total clauses*)
+Theorem count_ff_nil :
+  forall τ, count_ff τ [] = 0.
+Proof. intros; reflexivity. Qed.
+
+(* count the number of clauses that are true in a cnf formula. *)
+Theorem count_tt_cons :
+  forall τ c f,
+  count_tt τ (c :: f) =
+    (if eval_clause τ c then 1 else 0) + count_tt τ f.
+Proof.
+  intros τ c f. unfold count_tt. simpl.
+  destruct (eval_clause τ c); simpl; lia.
+Qed.
+
+(* count the number of clauses that are false in a cnf formula. *)
+Theorem count_tt_app :
+  forall τ f1 f2,
+  count_tt τ (f1 ++ f2) = count_tt τ f1 + count_tt τ f2.
+Proof.
+  intros τ f1 f2.
+  unfold count_tt.
+  rewrite filter_app.
+  rewrite app_length.
+  reflexivity.
+Qed.
+
+(*
  Collect all variables that appear in a CNF formula.*) 
 Fixpoint vars (f : cnf) : list V :=
   match f with
@@ -129,6 +168,48 @@ Proof.
       * right. exists c'. split; assumption.
 Qed.
 
+(*vars_append*)
+Theorem vars_append :
+  forall f1 f2,
+  vars (f1 ++ f2) = vars f1 ++ vars f2.
+Proof.
+  induction f1 as [| c cs IH].
+  - simpl. reflexivity.
+  - simpl. rewrite IH. rewrite app_assoc. reflexivity.
+Qed.
+
+(*caluse vars subset*)
+Theorem clause_vars_subset :
+  forall c f,
+  In c f ->
+  forall v, In v (clause_vars c) -> In v (vars f).
+Proof.
+  intros c f H.
+  induction f as [| c' cs IH].
+  - inversion H.
+  - simpl. intros v Hv.
+    destruct H.
+    + subst. apply in_or_app. left. assumption.
+    + apply in_or_app. right.
+      apply IH; assumption.
+Qed.
+
+(*vars subset*)
+Theorem vars_subset_of_subset :
+  forall f1 f2,
+  subset_cnf f1 f2 ->
+  forall v, In v (vars f1) -> In v (vars f2).
+Proof.
+  intros f1 f2 Hsub v Hv.
+  apply mem_vars_iff_exists_mem_clause_and_mem in Hv.
+  destruct Hv as [c [Hc Hv]].
+  apply mem_vars_iff_exists_mem_clause_and_mem.
+  exists c.
+  split.
+  - apply Hsub. assumption.
+  - assumption.
+Qed.
+
 
 (*Frome line 253 in lean
 2 cnf are equivalent iff they have the same satisfiability.*)
@@ -147,4 +228,22 @@ Definition sequiv (f1 f2 : cnf) (s : list V) :=
     (exists σ1, eval_cnf σ1 f1 = true /\ agree_on τ σ1 s) <->
     (exists σ2, eval_cnf σ2 f2 = true /\ agree_on τ σ2 s).
 
+(* 2 cnf are equivalent iff for any assignment, there exists an assignment 
+that agrees on the variables and makes the cnf true.*)
+Theorem eval_eq_of_agree_on :
+  forall τ1 τ2 f,
+  agree_on τ1 τ2 (vars f) ->
+  eval_cnf τ1 f = eval_cnf τ2 f.
+Proof.
+  intros τ1 τ2 f H.
+  induction f as [| c cs IH].
+  - simpl. reflexivity.
+  - simpl.
+    rewrite IH.
+    2:{
+      intros v Hv.
+      apply H.
+      simpl. apply in_or_app. right. assumption.
+    }
+Abort.
 End CNF_Definition.
