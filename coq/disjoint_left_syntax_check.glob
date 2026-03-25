@@ -1,0 +1,47 @@
+DIGEST b91a06822dac9764dccfe3243feeaaf4
+Fdisjoint_left_syntax_check
+R24:27 Coq.Lists.List <> <> lib
+R37:49 Coq.Lists.List ListNotations <> mod
+ax 62:62 <> V
+ax 146:152 <> literal
+R160:163 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 180:185 <> gensym
+R193:196 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 213:215 <> cnf
+R223:226 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 243:252 <> assignment
+R260:263 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R338:341 Coq.Init.Logic <> True ind
+not 324:324 <> :::x_'in'_x
+R385:388 Coq.Init.Logic <> True ind
+not 367:367 <> :::x_'''not'_x_x
+def 417:424 <> disjoint
+R431:434 Coq.Init.Datatypes <> list ind
+R437:443 disjoint_left_syntax_check <> literal defax
+R445:445 disjoint_left_syntax_check <> V defax
+binder 427:427 <> l:6
+R454:459 disjoint_left_syntax_check <> gensym defax
+R461:461 disjoint_left_syntax_check <> V defax
+binder 450:450 <> g:7
+R487:487 disjoint_left_syntax_check <> V defax
+binder 484:484 <> v:8
+R497:500 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R492:495 disjoint_left_syntax_check <> :::x_'in'_x not
+R506:509 disjoint_left_syntax_check <> :::x_'in'_x not
+prf 522:534 <> disjoint_left
+R550:553 Coq.Init.Datatypes <> list ind
+R556:562 disjoint_left_syntax_check <> literal defax
+R564:564 disjoint_left_syntax_check <> V defax
+binder 547:547 <> l:9
+R572:577 disjoint_left_syntax_check <> gensym defax
+R579:579 disjoint_left_syntax_check <> V defax
+binder 569:569 <> g:10
+R586:586 disjoint_left_syntax_check <> V defax
+binder 583:583 <> v:11
+R606:609 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R594:601 disjoint_left_syntax_check <> disjoint def
+R603:603 disjoint_left_syntax_check <> l:9 var
+R605:605 disjoint_left_syntax_check <> g:10 var
+R616:619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R611:614 disjoint_left_syntax_check <> :::x_'in'_x not
+R625:628 disjoint_left_syntax_check <> :::x_'in'_x not

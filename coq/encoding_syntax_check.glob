@@ -1,0 +1,38 @@
+DIGEST 8f91b3e5eabf05d2e0151109250e74f0
+Fencoding_syntax_check
+R78:81 Coq.Lists.List <> <> lib
+R91:103 Coq.Lists.List ListNotations <> mod
+ax 116:116 <> V
+ax 136:142 <> literal
+R150:153 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 170:175 <> gensym
+R183:186 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+ax 203:205 <> cnf
+R213:216 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R378:381 Coq.Init.Logic <> True ind
+not 363:363 <> :::x_'in'_x
+R427:431 Coq.Init.Logic <> False ind
+not 408:408 <> :::x_'''not'_x_x
+R477:480 Coq.Init.Logic <> True ind
+not 458:458 <> :::x_'perm'_x
+ax 539:541 <> enc
+R560:563 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R544:547 Coq.Init.Datatypes <> list ind
+R550:556 encoding_syntax_check <> literal defax
+R558:558 encoding_syntax_check <> V defax
+R572:575 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R564:569 encoding_syntax_check <> gensym defax
+R571:571 encoding_syntax_check <> V defax
+R581:583 Coq.Init.Datatypes <> ::type_scope:x_'*'_x not
+R576:578 encoding_syntax_check <> cnf defax
+R580:580 encoding_syntax_check <> V defax
+R584:589 encoding_syntax_check <> gensym defax
+R591:591 encoding_syntax_check <> V defax
+ax 604:611 <> disjoint
+R630:633 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R614:617 Coq.Init.Datatypes <> list ind
+R620:626 encoding_syntax_check <> literal defax
+R628:628 encoding_syntax_check <> V defax
+R642:645 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R634:639 encoding_syntax_check <> gensym defax
+R641:641 encoding_syntax_check <> V defax

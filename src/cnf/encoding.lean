@@ -107,7 +107,6 @@ by simp [append, constraint.append]
 theorem append_eval_tt_iff {c₁ c₂ : constraint} {l : list (literal V)} {τ : assignment V} :
   (c₁ ++ c₂).eval τ l = tt ↔ c₁.eval τ l = tt ∧ c₂.eval τ l = tt :=
 by simp [constraint.eval, append_tt_iff]
-
 /-! # fold -/
 
 def fold (l : list constraint) := l.foldr append append_id 
