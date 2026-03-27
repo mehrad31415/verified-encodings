@@ -1,3 +1,6 @@
+(* Import required modules for encoding definitions and utilities *)
+(* Note: The following modules must exist and be accessible to Coq for these Requires to work. 
+   If you see errors, ensure the corresponding .v files are present and the load path is set. *)
 Require Import assignment.
 Require Import clause.
 Require Import cnf.
@@ -5,18 +8,19 @@ Require Import gensym.
 Require Import literal.
 From LF Require Export Basics.
 
+
 Variable V: Type.
 Variable constraint: Type -> bool.
 Parameter enc: list (literal V) -> gensym V -> cnf V * gensym V.
 Parameter disjoint: list (literal V) -> gensym V -> Prop.
 
 Theorem disjoint_left: forall (l: list (literal V)) (g: gensym V) (v: V),
-  disjoint l g -> v in l -> v not in g.
+  disjoint l g -> In v (map (@literal.var V) l) -> ~ In v (gensym.stock g).
 Proof.
-    intros l g v Hdisjoint Hin.
-    unfold disjoint in Hdisjoint.
-    apply Hdisjoint.
-    apply Hin.
+  intros l g v Hdisjoint Hin.
+  unfold disjoint in Hdisjoint.
+  apply Hdisjoint.
+  assumption.
 Qed.
 
 Theorem disjoint_right: forall (1: list (literal V)) (2: gensym V) (3: V), disjoint 1 2 -> 3 in 1 -> 3 not in 2.
@@ -101,12 +105,22 @@ Proof.
   split; intros H; destruct H as [H1 H2]; split; assumption.
 Qed.
 
-Parameter fold (1: list constraint) := 1.foldr append append_id.\
+Instance is_left_id: is_left_id (constraint V) has_append append_id.
+Proof.
+    apply Build_is_left_id.
+    apply append_id_left_id.
+Qed.
 
-Theorem fold_nil (fold[]): append_id := rfl.
 
-Theorem fold_singleton: fold [enc] = enc by simp [fold].
+Instance is_right_id: is_right_id (constraint V) has_append append_id.
+Proof.
+    apply Build_is_right_id.
+    apply append_id_right_id.
+Qed.
 
-Theorem fold_cons (1: list (enc_fn V)): fold (enc : 1) = enc ++ fold 1 by simp.
+Definition fold (l : list (constraint V)) : constraint V := List.fold_right append append_id l.
 
-Parameter formula_encodes: forall (1: list (literal V)) (g), disjoint 
+Theorem fold_nil (1: list (constrain V)): append_id := rfl.
+Theorem fold_singleton (fold(enc)): enc := by simp [fold].
+
+Theorem fold_cons (1: list (enc)) 
