@@ -123,5 +123,56 @@ Qed.
 
 Definition fold (l : list (constraint V)) : constraint V := List.fold_right append append_id l.
 
-Theorem fold_nil (l: list (constrain V)): append_id := rfl.
+Theorem fold_nil (l: list (constrain V)): append_id.
+Proof.
+    reflexivity.
+Qed.
+    
 Theorem fold_singleton (fold(enc)): enc := by simp [fold].
+Theorem fold_cons (enc: constraint V) (l: list (constraint V)) : fold (enc :: l) = enc ++ fold l.
+Proof.
+  unfold fold.
+  simpl.
+  reflexivity.
+Qed.
+
+(* is_correct: An encoding function is correct if, whenever the input literals and the gensym are disjoint,
+   the CNF constraint returned by enc encodes the function on the input literals. *)
+Definition is_correct
+  (enc : list (literal V) -> gensym V -> (constraint V * gensym V)) : Prop :=
+  forall (l : list (literal V)) (g : gensym V),
+    disjoint l g ->
+    formula_encodes ((enc l g).1) l.
+
+(* is_well_behaved: An encoding is well-behaved if it only introduces fresh variables,
+   that is, the only variables in the output are from the input literals or from the gensym's stock,
+   and no other variables are introduced. *)
+Definition is_well_behaved
+  (enc : list (literal V) -> gensym V -> (constraint V * gensym V)) : Prop :=
+  forall (l : list (literal V)) (g : gensym V),
+    disjoint l g ->
+      (* All new gensym variables are a subset of the original gensym stock *)
+      subset ((enc l g).2).stock g.stock /\
+      (* All variables in the constraint are from the input literals or new gensym variables *)
+      subset (vars_of_constraint ((enc l g).1))
+             (vars_of_literals l ∪ (g.stock \ ((enc l g).2).stock)).
+
+(* If enc is well-behaved, then no variable outside the input literals or the gensym stock
+   appears in the output constraint. *)
+Theorem not_mem_form_of_is_wb :
+  forall (enc : list (literal V) -> gensym V -> (constraint V * gensym V)),
+  is_well_behaved enc ->
+  forall (l : list (literal V)) (g : gensym V),
+    disjoint l g ->
+    forall v,
+      ~ (In v (vars_of_literals l) \/ In v g.stock) ->
+      ~ In v (vars_of_constraint ((enc l g).1)).
+Proof.
+  intros enc Hwb l g Hdis v Hnin Hmem.
+  specialize (Hwb l g Hdis) as [_ Hvars].
+  unfold subset in Hvars.
+  apply Hvars in Hmem.
+  destruct Hmem as [Hlit | Hstock].
+  - apply Hnin. left. assumption.
+  - apply Hnin. right. destruct Hstock as [Hinstock _]. assumption.
+Qed.
