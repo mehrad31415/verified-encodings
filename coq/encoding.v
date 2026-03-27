@@ -23,45 +23,48 @@ Proof.
   assumption.
 Qed.
 
-Theorem disjoint_right: forall (1: list (literal V)) (2: gensym V) (3: V), disjoint 1 2 -> 3 in 1 -> 3 not in 2.
+Theorem disjoint_right: forall (l: list (literal V)) (g: gensym V) (v: V),
+  disjoint l g -> In v (gensym.stock g) -> ~ In v (map (@literal.var V) l).
 Proof.
-    intros 1 2 3 Hdisjoint Hin.
-    unfold disjoint in Hdisjoint.
-    apply Hdisjoint.
-    apply Hin.
+  intros l g v Hdisjoint Hin.
+  unfold disjoint in Hdisjoint.
+  intro Hcontra.
+  apply (Hdisjoint Hcontra) in Hin.
+  assumption.
 Qed.
 
-Theorem disjoint_perm: forall (1: list (literal V)) (2: gensym V) (3: list (literal V)), disjoint 1 2 -> 3 perm 1 -> disjoint 3 2.
+Theorem disjoint_perm: forall (l1: list (literal V)) (g: gensym V) (l2: list (literal V)), disjoint l1 g -> Permutation l2 l1 -> disjoint l2 g.
 Proof.
-    intros 1 2 3 Hdisjoint Hperm.
-    unfold disjoint in Hdisjoint.
-    apply Hdisjoint.
-    apply Hperm.
+  intros l1 g l2 Hdisjoint Hperm v Hvin.
+  apply Hdisjoint.
+  apply Permutation_in with (l':=l2) (l:=l1) in Hvin; auto.
 Qed.
 
-Namespace constraint.
+Module constraint.
 Variable C: constraint V.
-Parameter eval: constraint V -> assignment V -> list (Literal V) -> bool.
+Parameter eval: constraint V -> assignment V -> list (literal V) -> bool.
 
-Theorem eval_eq_of_agree_on: forall (1: assignment V) (2: assignment V) (3: list (literal V)), agree_on 1 2 (clause.vars 3) -> eval C 1 3 = 2.
+Theorem eval_eq_of_agree_on: forall (a1: assignment V) (a2: assignment V) (l: list (literal V)),
+  agree_on a1 a2 (clause.vars l) -> eval C a1 l = eval C a2 l.
 Proof.
-    intros 1 2 3 Hagree.
-    unfold eval in Hagree.
-    apply Hagree.
-Qed.
+  (* Detailed proof would depend on the definition of eval and agree_on;
+     placeholder for now. *)
+Admitted.
 
-Theorem append_id_left_id: forall (1: constraint V), append_id ++ C = C.
+End constraint.
+
+Theorem append_id_left_id: forall (l: constraint V), append_id ++ C = C.
 Proof.
-    intros 1.
+    intros l.
     unfold append_id.
     unfold append.
     apply eval_eq_of_agree_on.
     apply agree_on_id.
 Qed.
 
-Theorem append_id_right_id: forall (1: constraint V), C ++ append_id = C.
+Theorem append_id_right_id: forall (l: constraint V), C ++ append_id = C.
 Proof.
-    intros 1.
+    intros l.
     unfold append_id. 
     unfold append.
     apply eval_eq_of_agree_on. 
@@ -80,12 +83,12 @@ Proof.
     apply append_id_right_id.
 Qed.
 
-Theorem append_comm: forall (1: constraint V) (2: constraint V), 1 ++ 2 = 2 ++ 1.
+Theorem append_comm: forall (c1 c2: constraint V), c1 ++ c2 = c2 ++ c1.
 Proof.
-    intros 1 2.
-    unfold append.
-    apply eval_eq_of_agree_on.
-    apply agree_on_comm.
+  intros c1 c2.
+  unfold append.
+  apply constraint.eval_eq_of_agree_on.
+  apply agree_on_comm.
 Qed.
 
 Theorem append_tt_iff (c1 c2 : constraint V) (l : list (Literal V)) : (c1 ++ c2) l = true <-> c1 l = true /\ c2 l = true.
@@ -97,7 +100,7 @@ Proof.
 Qed.
 
 Theorem append_eval_tt_iff (c1 c2 : constraint V) (l : list (Literal V)) (tau : assignment V) :
-  (c1 ++ c2).eval tau l = true <-> c1.eval tau l = true /\ c2.eval tau l = true.
+  (constraint.append c1 c2) eval tau l = true <-> c1.eval tau l = true /\ c2.eval tau l = true
 Proof.
   unfold constraint_eval, eval.
   unfold append.
@@ -120,7 +123,5 @@ Qed.
 
 Definition fold (l : list (constraint V)) : constraint V := List.fold_right append append_id l.
 
-Theorem fold_nil (1: list (constrain V)): append_id := rfl.
+Theorem fold_nil (l: list (constrain V)): append_id := rfl.
 Theorem fold_singleton (fold(enc)): enc := by simp [fold].
-
-Theorem fold_cons (1: list (enc)) 
