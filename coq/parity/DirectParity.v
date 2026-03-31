@@ -43,7 +43,7 @@ Fixpoint count_flips (c1 c2 : clause V) : nat :=
   end.
 
 (* The direct parity encoding: all clauses with an even number of flips *)
-Fixpoint direct_parity' (l : list (literal V)) : cnf V :=
+Definition direct_parity' (l : list (literal V)) : cnf V :=
   match l with
   | [] => [[]]
   | lit :: ls =>
