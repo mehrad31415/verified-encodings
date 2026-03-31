@@ -13,3 +13,5 @@ cardinality/DirectAmo.v
 parity/Parity.v
 parity/Explode.v
 parity/DirectParity.v
+symmetry/LexOrder.v
+symmetry/LexLeader.v

@@ -74,3 +74,15 @@ _src/cardinality/distinct.lean_.
 _src/cardinality/sc\_amo.lean_.
 
 Deadline: 31st of march 5 PM. 4 weeks.
+
+## Building
+
+Prerequisites: Coq 8.20.0 (install via `opam install coq.8.20.0`)
+
+```bash
+cd coq
+make clean   # optional, removes build artifacts
+make         # generates Makefile.coq from _CoqProject, then compiles all .v files
+```
+
+This compiles all files in dependency order as specified in `_CoqProject`. If compilation succeeds with no errors, all definitions type-check and all proofs are verified.

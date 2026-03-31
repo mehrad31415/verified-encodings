@@ -4,3 +4,14 @@
 # Lean specific files
 _target/*
 *.olean
+
+# Coq build artifacts
+*.vo
+*.vok
+*.vos
+*.glob
+*.aux
+.lia.cache
+Makefile.coq
+Makefile.coq.conf
+.Makefile.coq.d
