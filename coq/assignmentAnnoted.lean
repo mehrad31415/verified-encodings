@@ -107,6 +107,8 @@ end agree_on_lemmas
 
 /-! # Evaluation with agree_on -/
 
+/- If there's 2 assignments agreeing on a set of vars, and there
+is a literal in that set, then they agree on that literal-/
 theorem eval_eq_of_agree_on_of_var_mem : (agree_on τ₁ τ₂ s) → l.var ∈ s → l.eval τ₁ = l.eval τ₂ :=
 assume h₁ h₂, by { cases l, exact h₁ l h₂, exact congr_arg bnot (h₁ l h₂) }
 

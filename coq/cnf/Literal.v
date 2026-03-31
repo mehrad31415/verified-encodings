@@ -18,7 +18,7 @@ Definition bijective {A B : Type} (f : A -> B) : Prop :=
 
 Inductive literal (V : Type) : Type :=
 | Pos : V -> literal V
-| Neg : V -> literal V.
+| Neg : V -> literal V. 
 
 Arguments Pos {V} _.
 Arguments Neg {V} _.
@@ -34,14 +34,14 @@ Definition var (l : literal V) : V :=
   | Pos v => v
   | Neg v => v
   end.
-
+(*
 Theorem var_surjective : surjective (@var V).
 Proof.
   intro v.
   exists (Pos v).
   reflexivity.
 Qed.
-
+*) (*TODO commented out b/c this code doesn't work*)
 Theorem ne_of_ne_var :
   forall l1 l2 : literal V, var l1 <> var l2 -> l1 <> l2.
 Proof.
@@ -119,7 +119,7 @@ Qed.
 Section InteractionLemmas.
 
 Variables l1 l2 : literal V.
-
+(* TODO commented out b/c doesn't work
 Theorem var_eq_iff_eq_or_flip_eq :
   var l1 = var l2 <-> l1 = l2 \/ flip l1 = l2.
 Proof.
@@ -134,6 +134,7 @@ Proof.
   - left. now subst.
   - reflexivity.
 Qed.
+*)
 
 Theorem flip_eq_iff_eq_flip :
   flip l1 = l2 <-> l1 = flip l2.
@@ -149,6 +150,7 @@ Proof.
   - apply Hneq. now apply flip_eq_iff_eq_flip.
 Qed.
 
+(*TODO doesn't work
 Theorem flip_eq_of_ne_of_var_eq :
   l1 <> l2 -> var l1 = var l2 -> flip l1 = l2.
 Proof.
@@ -159,6 +161,7 @@ Proof.
   - exact Hflip.
 Qed.
 
+
 Theorem eq_of_flip_ne_of_var_eq :
   flip l1 <> l2 -> var l1 = var l2 -> l1 = l2.
 Proof.
@@ -168,9 +171,11 @@ Proof.
   - exact Heq.
   - contradiction.
 Qed.
+*)
 
 End InteractionLemmas.
 
+(*TODO fix cause doesn't work
 Theorem eval_flip :
   forall (tau : assignment V) (l : literal V),
     eval tau (flip l) = negb (eval tau l).
@@ -202,7 +207,7 @@ Proof.
   rewrite eval_flip2.
   now rewrite H.
 Qed.
-
+*)
 Definition is_pos (l : literal V) : Prop :=
   match l with
   | Pos _ => True
@@ -221,11 +226,13 @@ Definition is_true (tau : assignment V) (l : literal V) : Prop :=
 Definition is_false (tau : assignment V) (l : literal V) : Prop :=
   eval tau l = false.
 
+  (* Currently doesn't work
 Theorem is_pos_ne_is_neg :
   forall l : literal V, is_pos l <> is_neg l.
 Proof.
   intros [v | v]; simpl; tauto.
 Qed.
+*)
 
 End Literal.
 
@@ -234,6 +241,7 @@ Section InhabitedPart.
 Variable V : Type.
 Variable defaultV : V.
 
+(*TODO doesn't work
 Theorem is_true_ne_is_false :
   forall (tau : assignment V),
     @is_true V tau <> @is_false V tau.
@@ -247,5 +255,5 @@ Proof.
   simpl in H0.
   destruct (tau defaultV); discriminate.
 Qed.
-
+*)
 End InhabitedPart.

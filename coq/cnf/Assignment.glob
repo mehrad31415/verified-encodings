@@ -1,0 +1,370 @@
+DIGEST 042fa0a2f96007ade0ec1cc8d3a03e39
+FVE.cnf.Assignment
+R568:576 mathcomp.boot.ssreflect <> <> lib
+R578:584 mathcomp.boot.ssrbool <> <> lib
+R586:591 mathcomp.boot.ssrfun <> <> lib
+R593:598 mathcomp.boot.eqtype <> <> lib
+R600:605 mathcomp.boot.ssrnat <> <> lib
+R607:609 mathcomp.boot.seq <> <> lib
+R611:617 mathcomp.boot.fintype <> <> lib
+R619:624 mathcomp.boot.finset <> <> lib
+R750:763 VE.cnf.Literal <> <> lib
+R873:887 Corelib.Init.Specif <> <> lib
+R930:945 Stdlib.Classes.Init <> <> lib
+def 1450:1459 <> assignment
+R1466:1472 mathcomp.boot.fintype Finite.Exports finType abbrev
+binder 1462:1462 <> V:1
+R1479:1482 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R1478:1478 VE.cnf.Assignment <> V:1 var
+R1483:1486 Corelib.Init.Datatypes <> bool ind
+def 1722:1739 <> default_assignment
+R1746:1752 mathcomp.boot.fintype Finite.Exports finType abbrev
+binder 1742:1742 <> V:2
+R1757:1766 VE.cnf.Assignment <> assignment def
+R1768:1768 VE.cnf.Assignment <> V:2 var
+R1790:1793 Corelib.Init.Datatypes <> true constr
+sec 1999:2006 <> agree_on
+var 2062:2062 agree_on V
+R2066:2072 mathcomp.boot.fintype Finite.Exports finType abbrev
+def 2476:2483 <> agree_on
+R2500:2509 VE.cnf.Assignment <> assignment def
+R2511:2511 VE.cnf.Assignment <> agree_on.V var
+binder 2486:2490 <> τ₁:5
+binder 2492:2496 <> τ₂:6
+R2519:2523 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R2525:2525 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R2524:2524 VE.cnf.Assignment <> agree_on.V var
+binder 2515:2515 <> s:7
+binder 2553:2553 <> v:8
+R2563:2566 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R2557:2561 Corelib.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R2556:2556 VE.cnf.Assignment <> v:8 var
+R2562:2562 VE.cnf.Assignment <> s:7 var
+R2574:2576 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2567:2571 VE.cnf.Assignment <> τ₁:5 var
+R2573:2573 VE.cnf.Assignment <> v:8 var
+R2577:2581 VE.cnf.Assignment <> τ₂:6 var
+R2583:2583 VE.cnf.Assignment <> v:8 var
+prf 3090:3093 <> refl
+R3109:3118 VE.cnf.Assignment <> assignment def
+R3120:3120 VE.cnf.Assignment <> agree_on.V var
+binder 3104:3105 <> τ:9
+R3134:3138 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3140:3140 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3139:3139 VE.cnf.Assignment <> agree_on.V var
+binder 3130:3130 <> s:10
+R3143:3150 VE.cnf.Assignment <> agree_on def
+R3152:3153 VE.cnf.Assignment <> τ:9 var
+R3155:3156 VE.cnf.Assignment <> τ:9 var
+R3158:3158 VE.cnf.Assignment <> s:10 var
+prf 3276:3279 <> symm
+R3304:3313 VE.cnf.Assignment <> assignment def
+R3315:3315 VE.cnf.Assignment <> agree_on.V var
+binder 3290:3294 <> τ₁:11
+binder 3296:3300 <> τ₂:12
+R3329:3333 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3335:3335 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3334:3334 VE.cnf.Assignment <> agree_on.V var
+binder 3325:3325 <> s:13
+R3347:3347 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3370:3375 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3398:3398 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3348:3355 VE.cnf.Assignment <> agree_on def
+R3357:3361 VE.cnf.Assignment <> τ₁:11 var
+R3363:3367 VE.cnf.Assignment <> τ₂:12 var
+R3369:3369 VE.cnf.Assignment <> s:13 var
+R3376:3383 VE.cnf.Assignment <> agree_on def
+R3385:3389 VE.cnf.Assignment <> τ₂:12 var
+R3391:3395 VE.cnf.Assignment <> τ₁:11 var
+R3397:3397 VE.cnf.Assignment <> s:13 var
+prf 3564:3567 <> comm
+R3592:3601 VE.cnf.Assignment <> assignment def
+R3603:3603 VE.cnf.Assignment <> agree_on.V var
+binder 3578:3582 <> τ₁:14
+binder 3584:3588 <> τ₂:15
+R3617:3621 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3623:3623 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3622:3622 VE.cnf.Assignment <> agree_on.V var
+binder 3613:3613 <> s:16
+R3635:3635 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3658:3664 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3687:3687 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3636:3643 VE.cnf.Assignment <> agree_on def
+R3645:3649 VE.cnf.Assignment <> τ₁:14 var
+R3651:3655 VE.cnf.Assignment <> τ₂:15 var
+R3657:3657 VE.cnf.Assignment <> s:16 var
+R3665:3672 VE.cnf.Assignment <> agree_on def
+R3674:3678 VE.cnf.Assignment <> τ₂:15 var
+R3680:3684 VE.cnf.Assignment <> τ₁:14 var
+R3686:3686 VE.cnf.Assignment <> s:16 var
+R3760:3763 VE.cnf.Assignment <> symm thm
+R3760:3763 VE.cnf.Assignment <> symm thm
+R3780:3783 VE.cnf.Assignment <> symm thm
+R3780:3783 VE.cnf.Assignment <> symm thm
+prf 3808:3812 <> trans
+R3843:3852 VE.cnf.Assignment <> assignment def
+R3854:3854 VE.cnf.Assignment <> agree_on.V var
+binder 3823:3827 <> τ₁:17
+binder 3829:3833 <> τ₂:18
+binder 3835:3839 <> τ₃:19
+R3868:3872 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3874:3874 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R3873:3873 VE.cnf.Assignment <> agree_on.V var
+binder 3864:3864 <> s:20
+R3886:3886 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3909:3913 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3887:3894 VE.cnf.Assignment <> agree_on def
+R3896:3900 VE.cnf.Assignment <> τ₁:17 var
+R3902:3906 VE.cnf.Assignment <> τ₂:18 var
+R3908:3908 VE.cnf.Assignment <> s:20 var
+R3914:3914 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3937:3942 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3965:3965 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R3915:3922 VE.cnf.Assignment <> agree_on def
+R3924:3928 VE.cnf.Assignment <> τ₂:18 var
+R3930:3934 VE.cnf.Assignment <> τ₃:19 var
+R3936:3936 VE.cnf.Assignment <> s:20 var
+R3943:3950 VE.cnf.Assignment <> agree_on def
+R3952:3956 VE.cnf.Assignment <> τ₁:17 var
+R3958:3962 VE.cnf.Assignment <> τ₃:19 var
+R3964:3964 VE.cnf.Assignment <> s:20 var
+prf 4162:4173 <> agree_on_nil
+R4194:4203 VE.cnf.Assignment <> assignment def
+R4205:4205 VE.cnf.Assignment <> agree_on.V var
+binder 4184:4186 <> τ1:21
+binder 4188:4190 <> τ2:22
+R4208:4215 VE.cnf.Assignment <> agree_on def
+R4217:4219 VE.cnf.Assignment <> τ1:21 var
+R4221:4223 VE.cnf.Assignment <> τ2:22 var
+R4225:4228 mathcomp.boot.finset <> set0 def
+R4287:4289 mathcomp.boot.finset <> inE def
+R4287:4289 mathcomp.boot.finset <> inE def
+R4287:4289 mathcomp.boot.finset <> inE def
+prf 4412:4426 <> agree_on_subset
+R4447:4456 VE.cnf.Assignment <> assignment def
+R4458:4458 VE.cnf.Assignment <> agree_on.V var
+binder 4437:4439 <> τ1:23
+binder 4441:4443 <> τ2:24
+R4476:4480 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R4482:4482 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R4481:4481 VE.cnf.Assignment <> agree_on.V var
+binder 4468:4469 <> s1:25
+binder 4471:4472 <> s2:26
+R4493:4493 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4524:4528 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+binder 4501:4501 <> v:27
+R4512:4515 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4505:4509 Corelib.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R4504:4504 VE.cnf.Assignment <> v:27 var
+R4510:4511 VE.cnf.Assignment <> s1:25 var
+R4517:4521 Corelib.ssr.ssrbool <> ::bool_scope:x_'\in'_x not
+R4516:4516 VE.cnf.Assignment <> v:27 var
+R4522:4523 VE.cnf.Assignment <> s2:26 var
+R4548:4559 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R4529:4536 VE.cnf.Assignment <> agree_on def
+R4538:4540 VE.cnf.Assignment <> τ1:23 var
+R4542:4544 VE.cnf.Assignment <> τ2:24 var
+R4546:4547 VE.cnf.Assignment <> s2:26 var
+R4560:4567 VE.cnf.Assignment <> agree_on def
+R4569:4571 VE.cnf.Assignment <> τ1:23 var
+R4573:4575 VE.cnf.Assignment <> τ2:24 var
+R4577:4578 VE.cnf.Assignment <> s1:25 var
+var 5016:5027 agree_on decidable_eq
+R5044:5044 VE.cnf.Assignment <> agree_on.V var
+binder 5038:5038 <> x:28
+binder 5040:5040 <> y:29
+R5056:5056 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R5062:5066 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R5073:5073 Corelib.Init.Specif <> ::type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R5058:5060 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5057:5057 VE.cnf.Assignment <> x:28 var
+R5061:5061 VE.cnf.Assignment <> y:29 var
+R5068:5071 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R5067:5067 VE.cnf.Assignment <> x:28 var
+R5072:5072 VE.cnf.Assignment <> y:29 var
+prf 5259:5290 <> agree_on_union_of_agree_on_of_eq
+R5324:5333 VE.cnf.Assignment <> assignment def
+R5335:5335 VE.cnf.Assignment <> agree_on.V var
+binder 5310:5314 <> τ₁:32
+binder 5316:5320 <> τ₂:33
+R5349:5353 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R5355:5355 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R5354:5354 VE.cnf.Assignment <> agree_on.V var
+binder 5345:5345 <> s:34
+R5369:5369 VE.cnf.Assignment <> agree_on.V var
+binder 5365:5365 <> v:35
+R5380:5380 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5403:5407 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5381:5388 VE.cnf.Assignment <> agree_on def
+R5390:5394 VE.cnf.Assignment <> τ₁:32 var
+R5396:5400 VE.cnf.Assignment <> τ₂:33 var
+R5402:5402 VE.cnf.Assignment <> s:34 var
+R5425:5438 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5475:5475 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R5415:5417 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5408:5412 VE.cnf.Assignment <> τ₁:32 var
+R5414:5414 VE.cnf.Assignment <> v:35 var
+R5418:5422 VE.cnf.Assignment <> τ₂:33 var
+R5424:5424 VE.cnf.Assignment <> v:35 var
+R5439:5446 VE.cnf.Assignment <> agree_on def
+R5448:5452 VE.cnf.Assignment <> τ₁:32 var
+R5454:5458 VE.cnf.Assignment <> τ₂:33 var
+R5468:5472 mathcomp.boot.finset <> ::set_scope:x_':|:'_x not
+R5461:5465 mathcomp.boot.finset <> ::set_scope:'['_'set'_x_']' not
+R5467:5467 mathcomp.boot.finset <> ::set_scope:'['_'set'_x_']' not
+R5466:5466 VE.cnf.Assignment <> v:35 var
+R5473:5473 VE.cnf.Assignment <> s:34 var
+R5598:5600 mathcomp.boot.finset <> inE def
+R5598:5600 mathcomp.boot.finset <> inE def
+R5598:5600 mathcomp.boot.finset <> inE def
+R5730:5732 Corelib.ssr.ssrbool <> orP thm
+R5772:5774 mathcomp.boot.eqtype <> eqP def
+R5842:5844 mathcomp.boot.finset <> inE def
+R5842:5844 mathcomp.boot.finset <> inE def
+R5842:5844 mathcomp.boot.finset <> inE def
+R5942:5942 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5949:5952 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5944:5947 mathcomp.boot.eqtype <> ::bool_scope:x_'=='_x not
+R5953:5956 Corelib.Init.Datatypes <> true constr
+R5942:5942 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5949:5952 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R5944:5947 mathcomp.boot.eqtype <> ::bool_scope:x_'=='_x not
+R5953:5956 Corelib.Init.Datatypes <> true constr
+R5996:5998 mathcomp.boot.eqtype <> eqP def
+R6075:6078 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6060:6060 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6067:6070 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6062:6065 mathcomp.boot.eqtype <> ::bool_scope:x_'=='_x not
+R6071:6074 Corelib.Init.Datatypes <> true constr
+R6080:6082 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6075:6078 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6060:6060 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6067:6070 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6062:6065 mathcomp.boot.eqtype <> ::bool_scope:x_'=='_x not
+R6071:6074 Corelib.Init.Datatypes <> true constr
+R6080:6082 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6140:6142 mathcomp.boot.eqtype <> eqP def
+R6211:6211 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R6211:6211 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+prf 6444:6457 <> agree_on_union
+R6479:6488 VE.cnf.Assignment <> assignment def
+R6490:6490 VE.cnf.Assignment <> agree_on.V var
+binder 6469:6471 <> τ1:36
+binder 6473:6475 <> τ2:37
+R6516:6520 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R6522:6522 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R6521:6521 VE.cnf.Assignment <> agree_on.V var
+binder 6508:6509 <> s1:38
+binder 6511:6512 <> s2:39
+R6526:6526 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6547:6551 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6527:6534 VE.cnf.Assignment <> agree_on def
+R6537:6539 VE.cnf.Assignment <> τ1:36 var
+R6541:6543 VE.cnf.Assignment <> τ2:37 var
+R6545:6546 VE.cnf.Assignment <> s1:38 var
+R6552:6552 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6573:6587 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6617:6617 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6553:6560 VE.cnf.Assignment <> agree_on def
+R6563:6565 VE.cnf.Assignment <> τ1:36 var
+R6567:6569 VE.cnf.Assignment <> τ2:37 var
+R6571:6572 VE.cnf.Assignment <> s2:39 var
+R6588:6595 VE.cnf.Assignment <> agree_on def
+R6598:6600 VE.cnf.Assignment <> τ1:36 var
+R6602:6604 VE.cnf.Assignment <> τ2:37 var
+R6609:6613 mathcomp.boot.finset <> ::set_scope:x_':|:'_x not
+R6607:6608 VE.cnf.Assignment <> s1:38 var
+R6614:6615 VE.cnf.Assignment <> s2:39 var
+R6688:6690 mathcomp.boot.finset <> inE def
+R6688:6690 mathcomp.boot.finset <> inE def
+R6688:6690 mathcomp.boot.finset <> inE def
+R6712:6714 Corelib.ssr.ssrbool <> orP thm
+prf 6839:6852 <> agree_on_inter
+R6877:6886 VE.cnf.Assignment <> assignment def
+R6888:6888 VE.cnf.Assignment <> agree_on.V var
+binder 6863:6867 <> τ₁:40
+binder 6869:6873 <> τ₂:41
+R6918:6922 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R6924:6924 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R6923:6923 VE.cnf.Assignment <> agree_on.V var
+binder 6906:6909 <> s₁:42
+binder 6911:6914 <> s₂:43
+R6927:6927 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6953:6965 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6928:6935 VE.cnf.Assignment <> agree_on def
+R6937:6941 VE.cnf.Assignment <> τ₁:40 var
+R6943:6947 VE.cnf.Assignment <> τ₂:41 var
+R6949:6952 VE.cnf.Assignment <> s₁:42 var
+R6966:6966 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6992:6997 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7034:7034 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R6967:6974 VE.cnf.Assignment <> agree_on def
+R6976:6980 VE.cnf.Assignment <> τ₁:40 var
+R6982:6986 VE.cnf.Assignment <> τ₂:41 var
+R6988:6991 VE.cnf.Assignment <> s₂:43 var
+R6998:7005 VE.cnf.Assignment <> agree_on def
+R7007:7011 VE.cnf.Assignment <> τ₁:40 var
+R7013:7017 VE.cnf.Assignment <> τ₂:41 var
+R7024:7028 mathcomp.boot.finset <> ::set_scope:x_':&:'_x not
+R7020:7023 VE.cnf.Assignment <> s₁:42 var
+R7029:7032 VE.cnf.Assignment <> s₂:43 var
+R7133:7135 mathcomp.boot.finset <> inE def
+R7133:7135 mathcomp.boot.finset <> inE def
+R7133:7135 mathcomp.boot.finset <> inE def
+R7175:7178 Corelib.ssr.ssrbool <> andP thm
+prf 7245:7263 <> agree_on_union_left
+R7287:7296 VE.cnf.Assignment <> assignment def
+R7298:7298 VE.cnf.Assignment <> agree_on.V var
+binder 7273:7277 <> τ₁:44
+binder 7279:7283 <> τ₂:45
+R7328:7332 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R7334:7334 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R7333:7333 VE.cnf.Assignment <> agree_on.V var
+binder 7316:7319 <> s₁:46
+binder 7321:7324 <> s₂:47
+R7337:7337 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7374:7378 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7404:7404 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7338:7345 VE.cnf.Assignment <> agree_on def
+R7347:7351 VE.cnf.Assignment <> τ₁:44 var
+R7353:7357 VE.cnf.Assignment <> τ₂:45 var
+R7364:7368 mathcomp.boot.finset <> ::set_scope:x_':|:'_x not
+R7360:7363 VE.cnf.Assignment <> s₁:46 var
+R7369:7372 VE.cnf.Assignment <> s₂:47 var
+R7379:7386 VE.cnf.Assignment <> agree_on def
+R7388:7392 VE.cnf.Assignment <> τ₁:44 var
+R7394:7398 VE.cnf.Assignment <> τ₂:45 var
+R7400:7403 VE.cnf.Assignment <> s₁:46 var
+R7489:7491 mathcomp.boot.finset <> inE def
+R7489:7491 mathcomp.boot.finset <> inE def
+R7489:7491 mathcomp.boot.finset <> inE def
+prf 7570:7589 <> agree_on_union_right
+R7613:7622 VE.cnf.Assignment <> assignment def
+R7624:7624 VE.cnf.Assignment <> agree_on.V var
+binder 7599:7603 <> τ₁:48
+binder 7605:7609 <> τ₂:49
+R7654:7658 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R7660:7660 mathcomp.boot.finset <> ::type_scope:'{'_'set'_x_'}' not
+R7659:7659 VE.cnf.Assignment <> agree_on.V var
+binder 7642:7645 <> s₁:50
+binder 7647:7650 <> s₂:51
+R7663:7663 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7700:7704 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7730:7730 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R7664:7671 VE.cnf.Assignment <> agree_on def
+R7673:7677 VE.cnf.Assignment <> τ₁:48 var
+R7679:7683 VE.cnf.Assignment <> τ₂:49 var
+R7690:7694 mathcomp.boot.finset <> ::set_scope:x_':|:'_x not
+R7686:7689 VE.cnf.Assignment <> s₁:50 var
+R7695:7698 VE.cnf.Assignment <> s₂:51 var
+R7705:7712 VE.cnf.Assignment <> agree_on def
+R7714:7718 VE.cnf.Assignment <> τ₁:48 var
+R7720:7724 VE.cnf.Assignment <> τ₂:49 var
+R7726:7729 VE.cnf.Assignment <> s₂:51 var
+R7815:7817 mathcomp.boot.finset <> inE def
+R7815:7817 mathcomp.boot.finset <> inE def
+R7815:7817 mathcomp.boot.finset <> inE def
+R7856:7859 Corelib.ssr.ssrbool <> orbT thm
+R7856:7859 Corelib.ssr.ssrbool <> orbT thm
+R7856:7859 Corelib.ssr.ssrbool <> orbT thm
+R8774:8781 VE.cnf.Assignment agree_on <> sec

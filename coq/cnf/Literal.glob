@@ -1,0 +1,283 @@
+DIGEST ce844f8c958954cb8cb1873daa094712
+FVE.cnf.Literal
+R24:32 Stdlib.Bool.Bool <> <> lib
+R59:88 Stdlib.Logic.FunctionalExtensionality <> <> lib
+def 186:195 <> assignment
+binder 198:198 <> V:1
+R212:215 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R211:211 VE.cnf.Literal <> V:1 var
+R216:219 Corelib.Init.Datatypes <> bool ind
+def 234:242 <> injective
+binder 245:245 <> A:2
+binder 247:247 <> B:3
+R263:266 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R262:262 VE.cnf.Literal <> A:2 var
+R267:267 VE.cnf.Literal <> B:3 var
+binder 258:258 <> f:4
+binder 289:289 <> x:5
+binder 291:291 <> y:6
+R303:306 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R297:299 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R294:294 VE.cnf.Literal <> f:4 var
+R296:296 VE.cnf.Literal <> x:5 var
+R300:300 VE.cnf.Literal <> f:4 var
+R302:302 VE.cnf.Literal <> y:6 var
+R308:310 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R307:307 VE.cnf.Literal <> x:5 var
+R311:311 VE.cnf.Literal <> y:6 var
+def 326:335 <> surjective
+binder 338:338 <> A:7
+binder 340:340 <> B:8
+R356:359 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R355:355 VE.cnf.Literal <> A:7 var
+R360:360 VE.cnf.Literal <> B:8 var
+binder 351:351 <> f:9
+binder 382:382 <> y:10
+R385:391 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R393:394 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 392:392 <> x:11
+R398:400 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R395:395 VE.cnf.Literal <> f:9 var
+R397:397 VE.cnf.Literal <> x:11 var
+R401:401 VE.cnf.Literal <> y:10 var
+def 416:424 <> bijective
+binder 427:427 <> A:12
+binder 429:429 <> B:13
+R445:448 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R444:444 VE.cnf.Literal <> A:12 var
+R449:449 VE.cnf.Literal <> B:13 var
+binder 440:440 <> f:14
+R475:478 Corelib.Init.Logic <> ::type_scope:x_'/\'_x not
+R464:472 VE.cnf.Literal <> injective def
+R474:474 VE.cnf.Literal <> f:14 var
+R479:488 VE.cnf.Literal <> surjective def
+R490:490 VE.cnf.Literal <> f:14 var
+ind 504:510 <> literal
+constr 535:537 <> Pos
+constr 558:560 <> Neg
+binder 513:513 <> V:15
+R542:545 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R541:541 VE.cnf.Literal <> V:15 var
+R546:552 VE.cnf.Literal <> literal:16 ind
+R554:554 VE.cnf.Literal <> V:15 var
+R565:568 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R564:564 VE.cnf.Literal <> V:15 var
+R569:575 VE.cnf.Literal <> literal:16 ind
+R577:577 VE.cnf.Literal <> V:15 var
+scheme 504:510 <> literal_rect
+scheme 504:510 <> literal_ind
+scheme 504:510 <> literal_rec
+scheme 504:510 <> literal_sind
+R592:594 VE.cnf.Literal <> Pos constr
+R592:594 VE.cnf.Literal <> Pos constr
+R613:615 VE.cnf.Literal <> Neg constr
+R613:615 VE.cnf.Literal <> Neg constr
+R645:651 VE.cnf.Literal <> literal ind
+scheme 625:652 <> literal_eq_dec
+sec 663:669 <> Literal
+var 682:682 Literal V
+def 704:706 <> var
+R713:719 VE.cnf.Literal <> literal ind
+R721:721 VE.cnf.Literal <> Literal.V var
+binder 709:709 <> l:20
+R726:726 VE.cnf.Literal <> Literal.V var
+R739:739 VE.cnf.Literal <> l:20 var
+R750:752 VE.cnf.Literal <> Pos constr
+R765:767 VE.cnf.Literal <> Neg constr
+prf 949:960 <> ne_of_ne_var
+R981:987 VE.cnf.Literal <> literal ind
+R989:989 VE.cnf.Literal <> Literal.V var
+binder 973:974 <> l1:22
+binder 976:977 <> l2:23
+R1008:1011 Corelib.Init.Logic <> ::type_scope:x_'->'_x not
+R998:1001 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R992:994 VE.cnf.Literal <> var def
+R996:997 VE.cnf.Literal <> l1:22 var
+R1002:1004 VE.cnf.Literal <> var def
+R1006:1007 VE.cnf.Literal <> l2:23 var
+R1014:1017 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R1012:1013 VE.cnf.Literal <> l1:22 var
+R1018:1019 VE.cnf.Literal <> l2:23 var
+def 1098:1101 <> eval
+R1110:1119 VE.cnf.Literal <> assignment def
+R1121:1121 VE.cnf.Literal <> Literal.V var
+binder 1104:1106 <> tau:24
+R1129:1135 VE.cnf.Literal <> literal ind
+R1137:1137 VE.cnf.Literal <> Literal.V var
+binder 1125:1125 <> l:25
+R1142:1145 Corelib.Init.Datatypes <> bool ind
+R1158:1158 VE.cnf.Literal <> l:25 var
+R1169:1171 VE.cnf.Literal <> Pos constr
+R1178:1180 VE.cnf.Literal <> tau:24 var
+R1188:1190 VE.cnf.Literal <> Neg constr
+R1197:1200 Corelib.Init.Datatypes <> negb def
+R1203:1205 VE.cnf.Literal <> tau:24 var
+def 1229:1232 <> flip
+R1239:1245 VE.cnf.Literal <> literal ind
+R1247:1247 VE.cnf.Literal <> Literal.V var
+binder 1235:1235 <> l:27
+R1252:1258 VE.cnf.Literal <> literal ind
+R1260:1260 VE.cnf.Literal <> Literal.V var
+R1273:1273 VE.cnf.Literal <> l:27 var
+R1284:1286 VE.cnf.Literal <> Pos constr
+R1293:1295 VE.cnf.Literal <> Neg constr
+R1303:1305 VE.cnf.Literal <> Neg constr
+R1312:1314 VE.cnf.Literal <> Pos constr
+prf 1334:1340 <> flip_ne
+R1357:1363 VE.cnf.Literal <> literal ind
+R1365:1365 VE.cnf.Literal <> Literal.V var
+binder 1353:1353 <> l:29
+R1374:1377 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R1368:1371 VE.cnf.Literal <> flip def
+R1373:1373 VE.cnf.Literal <> l:29 var
+R1378:1378 VE.cnf.Literal <> l:29 var
+prf 1434:1442 <> flip_flip
+R1459:1465 VE.cnf.Literal <> literal ind
+R1467:1467 VE.cnf.Literal <> Literal.V var
+binder 1455:1455 <> l:30
+R1483:1485 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1470:1473 VE.cnf.Literal <> flip def
+R1476:1479 VE.cnf.Literal <> flip def
+R1481:1481 VE.cnf.Literal <> l:30 var
+R1486:1486 VE.cnf.Literal <> l:30 var
+prf 1541:1551 <> flip_var_eq
+R1568:1574 VE.cnf.Literal <> literal ind
+R1576:1576 VE.cnf.Literal <> Literal.V var
+binder 1564:1564 <> l:31
+R1591:1593 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1579:1581 VE.cnf.Literal <> var def
+R1584:1587 VE.cnf.Literal <> flip def
+R1589:1589 VE.cnf.Literal <> l:31 var
+R1594:1596 VE.cnf.Literal <> var def
+R1598:1598 VE.cnf.Literal <> l:31 var
+prf 1653:1666 <> flip_injective
+R1670:1678 VE.cnf.Literal <> injective def
+R1680:1683 VE.cnf.Literal <> flip def
+prf 1808:1815 <> flip_inj
+R1836:1842 VE.cnf.Literal <> literal ind
+R1844:1844 VE.cnf.Literal <> Literal.V var
+binder 1828:1829 <> l1:32
+binder 1831:1832 <> l2:33
+R1864:1868 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R1854:1856 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1847:1850 VE.cnf.Literal <> flip def
+R1852:1853 VE.cnf.Literal <> l1:32 var
+R1857:1860 VE.cnf.Literal <> flip def
+R1862:1863 VE.cnf.Literal <> l2:33 var
+R1871:1873 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R1869:1870 VE.cnf.Literal <> l1:32 var
+R1874:1875 VE.cnf.Literal <> l2:33 var
+R1904:1917 VE.cnf.Literal <> flip_injective thm
+R1904:1917 VE.cnf.Literal <> flip_injective thm
+prf 1962:1976 <> flip_surjective
+R1980:1989 VE.cnf.Literal <> surjective def
+R1991:1994 VE.cnf.Literal <> flip def
+R2025:2028 VE.cnf.Literal <> flip def
+R2025:2028 VE.cnf.Literal <> flip def
+R2042:2050 VE.cnf.Literal <> flip_flip thm
+R2042:2050 VE.cnf.Literal <> flip_flip thm
+prf 2067:2080 <> flip_bijective
+R2084:2092 VE.cnf.Literal <> bijective def
+R2094:2097 VE.cnf.Literal <> flip def
+R2126:2139 VE.cnf.Literal <> flip_injective thm
+R2126:2139 VE.cnf.Literal <> flip_injective thm
+R2152:2166 VE.cnf.Literal <> flip_surjective thm
+R2152:2166 VE.cnf.Literal <> flip_surjective thm
+prf 2183:2196 <> exists_flip_eq
+R2214:2220 VE.cnf.Literal <> literal ind
+R2222:2222 VE.cnf.Literal <> Literal.V var
+binder 2209:2210 <> l1:34
+R2225:2231 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2246:2247 Corelib.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R2237:2243 VE.cnf.Literal <> literal ind
+R2245:2245 VE.cnf.Literal <> Literal.V var
+binder 2232:2233 <> l2:35
+R2255:2257 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2248:2251 VE.cnf.Literal <> flip def
+R2253:2254 VE.cnf.Literal <> l2:35 var
+R2258:2259 VE.cnf.Literal <> l1:34 var
+R2291:2294 VE.cnf.Literal <> flip def
+R2291:2294 VE.cnf.Literal <> flip def
+R2309:2317 VE.cnf.Literal <> flip_flip thm
+R2309:2317 VE.cnf.Literal <> flip_flip thm
+sec 2334:2350 Literal InteractionLemmas
+var 2364:2365 Literal.InteractionLemmas l1
+var 2367:2368 Literal.InteractionLemmas l2
+R2372:2378 VE.cnf.Literal <> literal ind
+R2380:2380 VE.cnf.Literal <> Literal.V var
+prf 2829:2847 <> flip_eq_iff_eq_flip
+R2865:2869 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R2860:2862 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2853:2856 VE.cnf.Literal <> flip def
+R2858:2859 VE.cnf.Literal <> Literal.InteractionLemmas.l1 var
+R2863:2864 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+R2872:2874 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R2870:2871 VE.cnf.Literal <> Literal.InteractionLemmas.l1 var
+R2875:2878 VE.cnf.Literal <> flip def
+R2880:2881 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+R2902:2903 VE.cnf.Literal <> Literal.InteractionLemmas.l1 var
+R2919:2920 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+R2919:2920 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+prf 2999:3017 <> flip_ne_iff_ne_flip
+R3036:3040 Corelib.Init.Logic <> ::type_scope:x_'<->'_x not
+R3030:3033 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R3023:3026 VE.cnf.Literal <> flip def
+R3028:3029 VE.cnf.Literal <> Literal.InteractionLemmas.l1 var
+R3034:3035 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+R3043:3046 Corelib.Init.Logic <> ::type_scope:x_'<>'_x not
+R3041:3042 VE.cnf.Literal <> Literal.InteractionLemmas.l1 var
+R3047:3050 VE.cnf.Literal <> flip def
+R3052:3053 VE.cnf.Literal <> Literal.InteractionLemmas.l2 var
+R3115:3133 VE.cnf.Literal <> flip_eq_iff_eq_flip thm
+R3115:3133 VE.cnf.Literal <> flip_eq_iff_eq_flip thm
+R3162:3180 VE.cnf.Literal <> flip_eq_iff_eq_flip thm
+R3162:3180 VE.cnf.Literal <> flip_eq_iff_eq_flip thm
+R3667:3683 VE.cnf.Literal Literal.InteractionLemmas <> sec
+def 4462:4467 <> is_pos
+R4474:4480 VE.cnf.Literal <> literal ind
+R4482:4482 VE.cnf.Literal <> Literal.V var
+binder 4470:4470 <> l:40
+R4503:4503 VE.cnf.Literal <> l:40 var
+R4514:4516 VE.cnf.Literal <> Pos constr
+R4523:4526 Corelib.Init.Logic <> True ind
+R4532:4534 VE.cnf.Literal <> Neg constr
+R4541:4545 Corelib.Init.Logic <> False ind
+def 4566:4571 <> is_neg
+R4578:4584 VE.cnf.Literal <> literal ind
+R4586:4586 VE.cnf.Literal <> Literal.V var
+binder 4574:4574 <> l:42
+R4607:4607 VE.cnf.Literal <> l:42 var
+R4618:4620 VE.cnf.Literal <> Pos constr
+R4627:4631 Corelib.Init.Logic <> False ind
+R4637:4639 VE.cnf.Literal <> Neg constr
+R4646:4649 Corelib.Init.Logic <> True ind
+def 4670:4676 <> is_true
+R4685:4694 VE.cnf.Literal <> assignment def
+R4696:4696 VE.cnf.Literal <> Literal.V var
+binder 4679:4681 <> tau:44
+R4704:4710 VE.cnf.Literal <> literal ind
+R4712:4712 VE.cnf.Literal <> Literal.V var
+binder 4700:4700 <> l:45
+R4737:4739 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4727:4730 VE.cnf.Literal <> eval def
+R4736:4736 VE.cnf.Literal <> l:45 var
+R4732:4734 VE.cnf.Literal <> tau:44 var
+R4740:4743 Corelib.Init.Datatypes <> true constr
+def 4758:4765 <> is_false
+R4774:4783 VE.cnf.Literal <> assignment def
+R4785:4785 VE.cnf.Literal <> Literal.V var
+binder 4768:4770 <> tau:46
+R4793:4799 VE.cnf.Literal <> literal ind
+R4801:4801 VE.cnf.Literal <> Literal.V var
+binder 4789:4789 <> l:47
+R4826:4828 Corelib.Init.Logic <> ::type_scope:x_'='_x not
+R4816:4819 VE.cnf.Literal <> eval def
+R4825:4825 VE.cnf.Literal <> l:47 var
+R4821:4823 VE.cnf.Literal <> tau:46 var
+R4829:4833 Corelib.Init.Datatypes <> false constr
+R4990:4996 VE.cnf.Literal Literal <> sec
+sec 5008:5020 <> InhabitedPart
+var 5033:5033 InhabitedPart V
+var 5052:5059 InhabitedPart defaultV
+R5063:5063 VE.cnf.Literal <> InhabitedPart.V var
+R5453:5465 VE.cnf.Literal InhabitedPart <> sec

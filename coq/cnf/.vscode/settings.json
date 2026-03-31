@@ -1,5 +1,8 @@
 {
   "coq.loadPath": [
     ["./", "VE"]
-  ]
+  ],
+
+  "coqtop.args": ["-Q", ".", "VE"]
+  
 }
